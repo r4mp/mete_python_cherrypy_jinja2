@@ -17,7 +17,7 @@ setup(
                    ""),
     license = "AGPL",
     keywords = "mete",
-    url = "https://github.com/r4mp/mete",
+    url = "https://github.com/r4mp/mete_python_cherrypy_jinja2",
     packages=['mete', 'tests'],
     long_description=read('README.md'),
     classifiers=[
