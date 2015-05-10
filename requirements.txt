@@ -1,0 +1,4 @@
+CherryPy==3.7.0
+Jinja2==2.7.3
+MarkupSafe==0.23
+SQLAlchemy==1.0.4

@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block content %}   
+
+<article>
+
+        {% for user in users %}
+        <div class='row'>
+            <div class='col-xs-6 col-sm-3 col-md-2 col-sm-2 col-lg-2'>
+                <a href="/users/{{ user.id }}" title="Name"><div class='panel panel-default text-center'>
+                        <div class='panel-header'>
+                            <h6>{{ user.name }}</h6>
+                        </div>
+                        <div class='panel-body'>
+                            <img alt="Gravatar" height="80" src="http://gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?default=https%3A%2F%2Fassets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png" width="80" />
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        {% else %}
+        <h1>No users</h1>
+        {% endfor %}
+
+</article>
+{% endblock %}

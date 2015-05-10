@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block content %}   
+<h1>Drinks. All of them!</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Logo<span class="small">(click to edit drink)</span></th>
+            <th>Name</th>
+            <th>Bottle size</th>
+            <th>Caffeine</th>
+            <th>Price</th>
+            <th>Created at</th>
+        </tr>
+        <tbody>
+            {% for drink in drinks %}
+            <tr>
+                <td><a href="#"></a></td>
+                <td>{{ drink.name }}</td>
+                <td>{{ drink.bottle_size }}</td>
+                <td>{{ drink.caffeine }}</td>
+                <td>{{ drink.price }}</td>
+                <td>{{ drink.created_at }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </thead>
+</table>
+{% endblock %}
