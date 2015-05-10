@@ -30,11 +30,17 @@ def main():
     d.connect('drinks', '/drinks', controller=drinks, action='index')
     d.connect('drinks_show', '/drinks/{id:([0-9]+)}', controller=drinks, action='show')
     d.connect('drinks_new', '/drinks/new', controller=drinks, action='new')
+    d.connect('drinks_edit', '/drinks/{id:([0-9]+)}/edit', controller=drinks, action='edit')
 
     users = Users()
     d.connect('users', '/users', controller=users, action='index')
     d.connect('users_show', '/users/{id:([0-9]+)}', controller=users, action='show')
     d.connect('users_new', '/users/new', controller=users, action='new')
+    d.connect('users_stats', '/users/stats', controller=users, action='stats')
+    d.connect('users_edit', '/users/{id:([0-9]+)}/edit', controller=users, action='edit')
+    d.connect('users_delete', '/users/{id:([0-9]+)}/delete', controller=users, action='delete')
+    d.connect('users_payment', '/users/{id:([0-9]+)}/payment', controller=users, action='payment')
+    d.connect('users_deposit', '/users/{id:([0-9]+)}/deposit', controller=users, action='deposit')
 
     audits = Audits()
     d.connect('audits', '/audits', controller=audits, action='index')

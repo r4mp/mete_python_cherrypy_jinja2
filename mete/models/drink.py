@@ -1,6 +1,6 @@
 from models.model import Model
 from db import Base
-from sqlalchemy import Column, Integer, String, DateTime, func
+from sqlalchemy import Column, Integer, String, DateTime, func, orm
 
 class Drink(Base, Model):
 
@@ -14,6 +14,10 @@ class Drink(Base, Model):
     logo_url = Column(String)
     created_at = Column(DateTime, server_default=func.now())
     updated_at = Column(DateTime, server_default=func.now(), onupdate=func.current_timestamp())
+
+    @orm.reconstructor
+    def init_on_load(self):
+        self.price_eur = self.round_decimal(self.price/100)
 
     @staticmethod
     def list(session):

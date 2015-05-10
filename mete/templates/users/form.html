@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="page-header">
+    <h1>{{ header }}</h1>
+</div>
+
+<form accept-charset="UTF-8" action="{{ link }}" class="form-horizontal formtastic form-horizontal user" id="edit_user_1" method="post">
+    <div style="margin:0;padding:0;display:inline">
+    <fieldset>
+        <div class="string input required stringish form-group" id="user_name_input">
+            <label class=" col-lg-3 control-label" for="user_name">Name<abbr title="required">*</abbr></label>
+            <div class="col-lg-9"><input class="form-control" id="user_name" maxlength="255" name="name" placeholder="Name" required="required" type="text" value="">
+                <span class="help-inline">your nickname</span>
+            </div>
+        </div>
+        <div class="email input optional stringish form-group" id="user_email_input">
+            <label class=" col-lg-3 control-label" for="user_email">E-Mail</label>
+            <div class="col-lg-9">
+                <input class="form-control" id="user_email" maxlength="255" name="email" placeholder="E-Mail" type="email" value="">
+                <span class="help-inline">your e-mail address, visit gravatar.com to set you avatar</span>
+            </div>
+        </div>
+        <div class="number input optional numeric stringish form-group" id="user_balance_input">
+            <label class=" col-lg-3 control-label" for="user_balance">Balance</label>
+            <div class="col-lg-9">
+                <input class="form-control" id="user_balance" name="balance" placeholder="Balance" step="any" type="number" value="0">
+                <span class="help-inline">just in case you need to correct this</span>
+            </div>
+        </div>
+    </fieldset>
+    <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-10">
+            <input class="btn btn-default" id="user_submit_action" type="submit" value="{{ button_value }}">
+        </div>
+    </div>
+</form>
+
+
+{% endblock %}

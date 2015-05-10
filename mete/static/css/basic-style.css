@@ -4,17 +4,25 @@ body,html {
     padding-top: 50px;
 }
 
+.navbar-brand {
+    background-image: image_url('mete-logo.svg');
+    background-position: 0.5em 0.5em;
+    background-repeat: no-repeat;
+    background-size: 2em;
+    padding-left: 3em;
+}
+
 #header {
-/*    font-size: 2em;
+    /*    font-size: 2em;
     font-weight: bold;
     color: #777777;
     margin: 40px 0px 70px;
     text-align: center;
-*/
+     */
 }
 
 .content {
-/*    padding: 40px 15px;
+    /*    padding: 40px 15px;
     text-align: center;*/
 }
 
@@ -30,36 +38,58 @@ body,html {
 }
 
 .form-signin {
-  max-width: 330px;
-  padding: 15px;
-  margin: 0 auto;
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
 }
 .form-signin .form-signin-heading,
 .form-signin .checkbox {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 .form-signin .checkbox {
-  font-weight: normal;
+    font-weight: normal;
 }
 .form-signin .form-control {
-  position: relative;
-  height: auto;
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 10px;
-  font-size: 16px;
+    position: relative;
+    height: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
 }
 .form-signin .form-control:focus {
-  z-index: 2;
+    z-index: 2;
 }
 .form-signin input[type="email"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
 }
 .form-signin input[type="password"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.btn-drink, .btn-pay {
+    width: 140px;
+    height: 140px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.btn-drink:hover, .btn-pay:hover {
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.btn-drink, .btn-drink:hover {
+    color: black;
+}
+
+.row {
+    margin-top: 10px;
 }
