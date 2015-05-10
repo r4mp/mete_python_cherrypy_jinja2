@@ -9,6 +9,7 @@ from db import SAEnginePlugin, SATool
 from controllers.basehandler import BaseHandler
 from controllers.drinks import Drinks
 from controllers.users import Users
+from controllers.audits import Audits
 import os.path
 
 import cherrypy
@@ -30,10 +31,13 @@ def main():
     d.connect('drinks_show', '/drinks/{id:([0-9]+)}', controller=drinks, action='show')
     d.connect('drinks_new', '/drinks/new', controller=drinks, action='new')
 
-    users = Users
+    users = Users()
     d.connect('users', '/users', controller=users, action='index')
     d.connect('users_show', '/users/{id:([0-9]+)}', controller=users, action='show')
     d.connect('users_new', '/users/new', controller=users, action='new')
+
+    audits = Audits()
+    d.connect('audits', '/audits', controller=audits, action='index')
 
     confdict = {'/': {'request.dispatch': d}}
     
