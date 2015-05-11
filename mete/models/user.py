@@ -19,15 +19,15 @@ class User(Base, Model):
 
     @staticmethod
     def deposit(session, uid, amount):
-        session.query(User).filter_by(id=int(uid)).update({ "balance": session.query(User).filter_by(id=int(uid)).first().balance + int(amount) })
+        session.query(User).filter_by(id=int(uid)).update({ "balance": session.query(User).filter_by(id=int(uid)).one().balance + int(amount) })
         
     @staticmethod
     def payment(session, uid, amount):
-        session.query(User).filter_by(id=int(uid)).update({ "balance": session.query(User).filter_by(id=int(uid)).first().balance - int(amount) })
+        session.query(User).filter_by(id=int(uid)).update({ "balance": session.query(User).filter_by(id=int(uid)).one().balance - int(amount) })
 
     @staticmethod
     def get(session, uid):
-        return session.query(User).filter_by(id=int(uid)).first()
+        return session.query(User).filter_by(id=int(uid)).one()
 
     @staticmethod
     def delete(session, uid):
